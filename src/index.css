@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "react-slideshow-image/dist/styles.css";
+
+@font-face {
+  font-family: "Stars";
+  src: url("./fonts/star.woff") format("woff");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "StarsJedi";
+  src: url("./fonts/starjedi.ttf") format(".ttf");
+}
+
+html {
+  overflow-y: scroll;
+  margin: 7.4rem 0 0;
+}
+
+body {
+  font-family: "Stars", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  background-color: black;
+}
+
+::selection {
+  color: rgb(134, 124, 124);
+  background: gold;
+}
+
+span {
+  font-family: "StarsJedi";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
