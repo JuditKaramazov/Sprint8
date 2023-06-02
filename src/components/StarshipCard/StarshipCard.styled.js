@@ -39,7 +39,7 @@ export const ShipsContainer = styled.div`
         list-style: none;
 
         span {
-            color: grey;
+            color: #DEDEDE;
             margin-left: 0.7rem;
     }
 }
@@ -54,6 +54,7 @@ export const ShipsContainer = styled.div`
     100% {
       opacity: 1;
     }
+}
 `;
 
 export const ImageContainer = styled.div`
@@ -64,4 +65,4 @@ export const ImageContainer = styled.div`
 		width: 100%;
         object-fit: fill;
     };
-`
+`;

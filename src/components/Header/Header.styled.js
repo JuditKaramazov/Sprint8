@@ -45,6 +45,44 @@ export const Logo = styled.div`
   transform: translate(-50%, -50%);
 `;
 
+export const Registration = styled.div`
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  align-items: center;
+  justify-content: flex-end;
+  top: 35%;
+  right: 0%;
+  padding: 10px;
+  transform: translateX(90%);
+`;
+
+/* ¿Alternativa?
+export const Registration = styled.div`
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  align-items: center;
+  justify-content: flex-end;
+  top: 35%;
+  padding: 10px;
+  transform: translateX(300%);
+`; */
+
+export const RegistrationLinks = styled(NavLink)`
+  display: inline-block;
+  color: grey;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0 16px;
+
+  &:hover {
+    color: white;
+  }
+}`;
+
 export const LinksContainer = styled.div`
   display: flex;
   flex-direction: row;
