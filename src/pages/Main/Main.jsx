@@ -37,25 +37,26 @@ export const StarshipList = () => {
         return (
             <div>
                 {
-                    newValue && <InfiniteScroll
+                    <InfiniteScroll
                     dataLength={starship.length}
                     next={() => setPage(page => page < 4 ? page + 1 : page)}
-                    viewMore={viewMore}
+                    hasMore={viewMore} // Update the prop name from `viewMore` to `hasMore`
                     loader={<h1>Loading...</h1>}
                     endMessage={
-                        <p style={{color: 'gold', fontSize: '1.3rem', textAlign: 'center'}}>
-                            All starships succesfully loaded!
-                            <br />
-                            <br />
-                            {element}
-                        </p>}>
+                      <p style={{ color: 'gold', fontSize: '1.3rem', textAlign: 'center' }}>
+                        All starships successfully loaded!
+                        <br />
+                        <br />
+                        {element}
+                      </p>
+                    }
+                  >
                     <div className='starshipCard'>
-                        {
-                            starship.map((ship) =>
-                            <StarshipData key= {ship.url} name={ship.name} model={ship.model} url={ship.url} />)
-                        }
+                      {starship.map((ship) => (
+                        <StarshipData key={ship.url} name={ship.name} model={ship.model} url={ship.url} />
+                      ))}
                     </div>
-                    </ InfiniteScroll>
+                  </ InfiniteScroll>
                 }
             </div>
         )

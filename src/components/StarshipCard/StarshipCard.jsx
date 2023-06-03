@@ -11,11 +11,24 @@ export const StarshipCard = () => {
 
   useEffect(() => {
     axios
-        .get(`https://swapi.dev/api/starships/` + id)
-        .then((res) => {
-            setStarshipDetails(res.data)
-        })
-    }, []);
+      .get(`https://swapi.dev/api/starships/`)
+      .then((res) => {
+        const starships = res.data.results;
+        const starship = starships.find((ship) => {
+          const alternative = ship.url
+            .replace('https://swapi.dev/api/starships/', '')
+            .replace('/', '');
+          const newIdentifier = parseInt(alternative);
+          return newIdentifier === parseInt(id);
+        });
+        if (starship) {
+          setStarshipDetails(starship);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [id]);
     
     return (
       <ShipsContainer>
