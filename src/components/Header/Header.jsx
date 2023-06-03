@@ -3,6 +3,7 @@ import { HeaderContainer, Header, Logo, Registration, RegistrationLinks, HeaderL
 import siteLogo from '../../assets/siteLogo.svg';
 import { Login } from '../Login/Login';
 import { SignUp } from '../SignUp/SignUp';
+import { useNavigate } from 'react-router-dom';
 
 export default function SiteHeader() {
   const [openedLogin, setOpenedLogin] = useState(false);
@@ -10,6 +11,7 @@ export default function SiteHeader() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [loginCompleted, setLoginCompleted] = useState(false);
   const [showStarshipsAlert, setShowStarshipsAlert] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const userFromStorage = localStorage.getItem('loggedInUser');
@@ -32,7 +34,6 @@ export default function SiteHeader() {
       clearTimeout(timeoutId);
     };
   }, [showStarshipsAlert]);
-  
 
   const openLoginModal = () => {
     setOpenedLogin(true);
@@ -58,24 +59,26 @@ export default function SiteHeader() {
     setLoginCompleted(true);
     localStorage.setItem('loggedInUser', JSON.stringify(user));
   };
-  
+
   const handleLogOut = () => {
     setLoggedInUser(null);
     setLoginCompleted(false);
     localStorage.removeItem('loggedInUser');
+    window.location.reload();
   };
-  
+
+  const navigateToStarships = () => {
+    if (loggedInUser) {
+      navigate('/starships/');
+    }
+  };
 
   return (
     <HeaderContainer>
       <Header>
         <Logo>
           <a href="/">
-            <img
-              className="header-logo"
-              src={siteLogo}
-              alt="Star Wars official logo"
-            />
+            <img className="header-logo" src={siteLogo} alt="Star Wars official logo" />
           </a>
         </Logo>
         <LinksContainer>
@@ -91,26 +94,26 @@ export default function SiteHeader() {
             </Registration>
           )}
           {loginCompleted ? (
-          <Registration>
-            <RegistrationLinks className="user">
-              {loggedInUser.name}
-            </RegistrationLinks>
-            <div className="divider" style={{ color: 'grey', height: '1.2rem' }}> || </div>
-            <RegistrationLinks className="user" onClick={handleLogOut}>
-              SIGN OUT
-            </RegistrationLinks>
-          </Registration>
-        ) : (
-          <Registration>
-            <RegistrationLinks className="signup" onClick={openSignupModal}>
-              SIGN UP
-            </RegistrationLinks>
-            <div className="divider" style={{ color: 'grey', height: '1.2rem' }}> || </div>
-            <RegistrationLinks className="login" onClick={openLoginModal}>
-              LOG IN
-            </RegistrationLinks>
-          </Registration>
-        )}
+            <Registration>
+              <RegistrationLinks className="user" onClick={navigateToStarships}>
+                {loggedInUser.name}
+              </RegistrationLinks>
+              <div className="divider" style={{ color: 'grey', height: '1.2rem' }}> || </div>
+              <RegistrationLinks className="user" onClick={handleLogOut}>
+                SIGN OUT
+              </RegistrationLinks>
+            </Registration>
+          ) : (
+            <Registration>
+              <RegistrationLinks className="signup" onClick={openSignupModal}>
+                SIGN UP
+              </RegistrationLinks>
+              <div className="divider" style={{ color: 'grey', height: '1.2rem' }}> || </div>
+              <RegistrationLinks className="login" onClick={openLoginModal}>
+                LOG IN
+              </RegistrationLinks>
+            </Registration>
+          )}
           <HeaderLinks to="/" className="nav-link">
             HOME
           </HeaderLinks>
@@ -134,12 +137,8 @@ export default function SiteHeader() {
           </div>
         )}
       </Header>
-      {openedLogin && (
-        <Login closeModal={closeLoginModal} handleLogIn={handleLogIn} />
-      )}
-      {openedSignup && (
-        <SignUp closeModal={closeSignupModal} handleLogIn={handleLogIn} />
-      )}
+      {openedLogin && <Login closeModal={closeLoginModal} handleLogIn={handleLogIn} />}
+      {openedSignup && <SignUp closeModal={closeSignupModal} handleLogIn={handleLogIn} />}
     </HeaderContainer>
   );
 }
