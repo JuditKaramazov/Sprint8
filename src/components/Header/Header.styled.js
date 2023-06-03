@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
   width: 100%;
@@ -45,6 +45,15 @@ export const Logo = styled.div`
   transform: translate(-50%, -50%);
 `;
 
+export const LinksContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 9rem;
+  margin-bottom: 1rem;
+`;
+
 export const Registration = styled.div`
   display: flex;
   flex-direction: row;
@@ -81,16 +90,23 @@ export const RegistrationLinks = styled(NavLink)`
   &:hover {
     color: white;
   }
-}`;
-
-export const LinksContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-top: 9rem;
-  margin-bottom: 1rem;
+}
 `;
+
+export const StyledLink = styled(Link)`
+  display: inline-block;
+  color: grey;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0 16px;
+
+  &:hover {
+    color: white;
+  }
+}
+`
 
 export const HeaderLinks = styled(NavLink)`
   display: inline-block;
@@ -112,4 +128,3 @@ export const HeaderLinks = styled(NavLink)`
     border-bottom: 4px groove white !important;
   }
 `;
-
