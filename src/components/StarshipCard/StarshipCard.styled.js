@@ -60,6 +60,7 @@ export const ShipsContainer = styled.div`
 export const ImageContainer = styled.div`
 	position: relative;
     box-shadow: 0px 3px 2px gold;
+    
     .starship-visual {
         max-height: 25rem;
 		width: 100%;
