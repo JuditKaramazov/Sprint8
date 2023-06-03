@@ -132,7 +132,7 @@ export default function SiteHeader() {
           )}
         </ LinksContainer>
         {showStarshipsAlert && !loggedInUser && (
-          <div style={{ color: 'red', fontSize: '1rem' }}>
+          <div style={{ color: 'red', fontSize: '1.2rem'}}>
             Only registered users can see this content.
           </div>
         )}
