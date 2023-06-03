@@ -45,7 +45,7 @@ export const SignUp = ({ closeModal }) => {
     setLoggedInUser(newUser);
 
     closeModal();
-    alert(`Welcome, ${newUser.name}!`);
+    alert(`Successfully registered, ${newUser.name}!`);
   };
 
   return (
