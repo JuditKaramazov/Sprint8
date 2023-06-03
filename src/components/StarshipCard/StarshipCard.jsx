@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { ShipsContainer, ImageContainer } from './StarshipCard.styled';
+import { Pilots } from '../Pilots/Pilots';
+import { Films } from '../Films/Films';
 
 export const StarshipCard = () => {
   const [starshipDetails, setStarshipDetails] = useState({});
@@ -28,7 +30,7 @@ export const StarshipCard = () => {
         }}
         />
         </ImageContainer>
-        <div className='starships-details'>
+        <div className="starships-details">
             <ul>
                 <li>MODEL: <span>{starshipDetails.model}</span></li>
                 <li>STARSHIP CLASS: <span>{starshipDetails.starship_class}</span></li>
@@ -44,6 +46,19 @@ export const StarshipCard = () => {
                 <li>MAXIMUM SPEED IN REAL SPACE<span>{starshipDetails.MGLT} MGLT</span></li>
             </ul>
         </div>
+        {starshipDetails.pilots && <div className="pilots-details">
+          <h1>Related Pilots</h1>
+          <div className="pilots-container">
+            {starshipDetails.pilots.length > 0 ?
+            starshipDetails.pilots.map(item =>
+              <Pilots url={item} />
+              ) : <h2>No pilots related to this specific starship!</h2>}
+          </div>
+          </div>}
+          {starshipDetails.films && <div className="films-details">
+            <h1>Multimedia Franchise</h1>
+            <Films url={starshipDetails.films} />
+          </div>}
       </ ShipsContainer>
   );
 };
