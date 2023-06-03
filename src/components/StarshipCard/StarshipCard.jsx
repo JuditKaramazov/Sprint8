@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { ShipsContainer, ImageContainer } from './StarshipCard.styled';
 import { Pilots } from '../Pilots/Pilots';
+import { PilotsIntroduction, PilotsContainer } from '../Pilots/Pilots.styled';
 import { Films } from '../Films/Films';
+import { FilmsIntroduction, FilmContainer } from '../Films/Films.styled';
 
 export const StarshipCard = () => {
   const [starshipDetails, setStarshipDetails] = useState({});
@@ -31,6 +33,7 @@ export const StarshipCard = () => {
   }, [id]);
     
     return (
+      <>
       <ShipsContainer>
         <h1 className='ship-name'>{starshipDetails.name}</h1>
         <ImageContainer>
@@ -59,19 +62,22 @@ export const StarshipCard = () => {
                 <li>MAXIMUM SPEED IN REAL SPACE<span>{starshipDetails.MGLT} MGLT</span></li>
             </ul>
         </div>
-        {starshipDetails.pilots && <div className="pilots-details">
-          <h1>Related Pilots</h1>
-          <div className="pilots-container">
+        </ ShipsContainer>
+        <div>
+        <PilotsIntroduction>Related Pilots</ PilotsIntroduction>
+        {starshipDetails.pilots && <PilotsContainer>
+          <div>
             {starshipDetails.pilots.length > 0 ?
             starshipDetails.pilots.map(item =>
               <Pilots url={item} />
               ) : <h2>No pilots related to this specific starship!</h2>}
           </div>
-          </div>}
-          {starshipDetails.films && <div className="films-details">
-            <h1>Multimedia Franchise</h1>
+          </ PilotsContainer>}
+          <FilmsIntroduction>Multimedia Franchise</ FilmsIntroduction>
+          {starshipDetails.films && <FilmContainer>
             <Films url={starshipDetails.films} />
-          </div>}
-      </ ShipsContainer>
+          </ FilmContainer>}
+      </div>
+      </>
   );
 };

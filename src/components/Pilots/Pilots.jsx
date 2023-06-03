@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
-
-const NoImageContainer = styled.div`
-  background-color: #f1f1f1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 200px; /* Adjust as needed, little Padawan */
-`;
+import { PilotImageContainer, NoImageContainer } from './Pilots.styled';
 
 export const Pilots = (props) => {
   const [pilotDetails, setPilotDetails] = useState({});
@@ -50,9 +41,9 @@ export const Pilots = (props) => {
   return (
     <div className="pilots-container">
       <p className="pilot-name">{pilotDetails.name}</p>
-      <div className="pilot-visual-reference">
+      <PilotImageContainer>
         {!imageError ? (
-          <img
+          <img className="pilot-visual"
             src={`https://starwars-visualguide.com/assets/img/characters/${newIdentifier}.jpg`}
             alt="Pilot visual reference"
             onError={handleImageError}
@@ -62,24 +53,14 @@ export const Pilots = (props) => {
             <p>No image available...</p>
           </NoImageContainer>
         )}
-      </div>
+      </ PilotImageContainer>
       <ul className="pilot-further-details">
         <div className="pilot-details-classification">
-          <li>
-            <span>Height:</span> <span>{pilotDetails.height}</span>
-          </li>
-          <li>
-            <span>Mass:</span> <span>{pilotDetails.mass}</span>
-          </li>
-          <li>
-            <span>Gender:</span> <span>{pilotDetails.gender}</span>
-          </li>
-          <li>
-            <span>Hair:</span> <span>{pilotDetails.hair}</span>
-          </li>
-          <li>
-            <span>Birthday:</span> <span>{pilotDetails.birthday}</span>
-          </li>
+          <li>Height:<span>{pilotDetails.height}</span></li>
+          <li>Mass:<span>{pilotDetails.mass}</span></li>
+          <li>Gender:<span>{pilotDetails.gender}</span></li>
+          <li>Hair:<span>{pilotDetails.hair}</span></li>
+          <li>Birthday:<span>{pilotDetails.birthday}</span></li>
         </div>
       </ul>
     </div>

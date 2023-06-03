@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
-
-const NoImageContainer = styled.div`
-  background-color: #f1f1f1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 200px; /* Adjust the height as needed */
-`;
+import { FilmImageContainer, NoImageContainer } from './Films.styled';
 
 export const Films = (props) => {
   const [filmDetails, setFilmDetails] = useState([]);
@@ -45,13 +36,13 @@ export const Films = (props) => {
         <div className="film-details" key={index}>
           <p className="film-title">{film.title}</p>
           <p className="film-episode">Episode: {film.episode}</p>
-          <div className="film-visual-reference">
+          <FilmImageContainer>
             {film.imageError ? (
               <NoImageContainer>
                 <p>No image available!</p>
               </ NoImageContainer>
             ) : (
-              <img
+              <img className="film-visual"
                 src={`https://starwars-visualguide.com/assets/img/films/${index + 1}.jpg`}
                 alt="Film visual reference"
                 onError={(e) => {
@@ -61,17 +52,12 @@ export const Films = (props) => {
                 }}
               />
             )}
-          </div>
+          </ FilmImageContainer>
           <ul className="film-further-details">
             <div className="film-details-classification">
-              <li>
-                <span>Director:</span> <span>{film.director}</span>
-              </li>
-              <li>
-                <span>Producer:</span> <span>{film.producer}</span>
-              </li>
-              <li>
-                <span>Release Date:</span> <span>{film.release_date}</span>
+              <li>Director:<span>{film.director}</span></li>
+              <li>Producer:<span>{film.producer}</span></li>
+              <li>Release Date:<span>{film.release_date}</span>
               </li>
             </div>
           </ul>
