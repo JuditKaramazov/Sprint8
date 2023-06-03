@@ -92,10 +92,3 @@ export const FormBody = styled.form`
     }
 }
 `;
-
-export const Alert = styled.span`
-  display: block;
-  color: red;
-  text-align: center;
-  margin-top: 3px;
-`;

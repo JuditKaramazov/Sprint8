@@ -18,8 +18,8 @@ export const StarshipCard = () => {
         const starships = res.data.results;
         const starship = starships.find((ship) => {
           const alternative = ship.url
-            .replace('https://swapi.dev/api/starships/', '')
-            .replace('/', '');
+            .replace("https://swapi.dev/api/starships/", "")
+            .replace("/", "");
           const newIdentifier = parseInt(alternative);
           return newIdentifier === parseInt(id);
         });
@@ -35,11 +35,11 @@ export const StarshipCard = () => {
     return (
       <>
       <ShipsContainer>
-        <h1 className='ship-name'>{starshipDetails.name}</h1>
+        <h1 className="ship-name">{starshipDetails.name}</h1>
         <ImageContainer>
-        <img className='starship-visual'
+        <img className="starship-visual"
         src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`} 
-        alt='Starship visual representation' 
+        alt="Starship visual representation" 
         onError={({ currentTarget }) => {
             currentTarget.onerror = null;
             currentTarget.src = `https://lh3.googleusercontent.com/pw/AJFCJaUmn8kBRrJflDNa9vMfiK4cjVhxoGGSLA9ngPpkkyP_DRHoTzioB9ls9m39Kw1R2rDhreRyfe848n_USjpI-ZOv34jiWRXRnxsJCtvm2AWyza8g-_u_9FePhlvDbQ2xIThS_M_x2SFpGTXDPM5XVFI=w798-h575-s-no?authuser=0"`;

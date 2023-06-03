@@ -96,6 +96,7 @@ export const FormBody = styled.form`
 export const Alert = styled.span`
   display: block;
   color: red;
+  font-size: 1.2rem;
   text-align: center;
-  margin-top: 3px;
+  margin-bottom: 10px;
 `;
