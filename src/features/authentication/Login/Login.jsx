@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Overlay, FormBody, Alert } from './Login.styled';
-import registrationHeader from '../../assets/registrationHeader.png';
+import registrationHeader from '../../../assets/registrationHeader.png';
 
 export const Login = ({ closeModal, handleLogIn }) => {
   const [loginData, setLoginData] = useState({ email: '', password: '' });

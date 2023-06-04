@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import closeForm from '../../assets/closeForm.png';
+import closeForm from '../../../assets/closeForm.png';
 
 export const Overlay = styled.div`
   display: flex;
@@ -32,7 +32,7 @@ export const FormBody = styled.form`
   opacity: 0.9;
 
   .close-form {
-    height: 50px;
+    height: 40px;
     width: 50px;
     margin-top: 1%;
     margin-left: 90%;
@@ -91,4 +91,12 @@ export const FormBody = styled.form`
         background-color: #3f6ca9;
     }
 }
+`;
+
+export const Alert = styled.span`
+  display: block;
+  color: red;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 10px;
 `;

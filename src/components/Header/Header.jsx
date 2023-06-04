@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { HeaderContainer, StyledHeader, Logo, Registration, RegistrationLinks, StyledLink, HeaderLinks, LinksContainer } from './Header.styled';
 import siteLogo from '../../assets/siteLogo.svg';
-import { Login } from '../Login/Login';
-import { SignUp } from '../SignUp/SignUp';
+import { Login } from '../../features/authentication/Login/Login';
+import { SignUp } from '../../features/authentication/SignUp/SignUp';
 
 export default function Header() {
   const [openedLogin, setOpenedLogin] = useState(false);

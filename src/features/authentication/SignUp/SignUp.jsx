@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Overlay, FormBody } from './SignUp.styled';
-import registrationHeader from '../../assets/registrationHeader.png';
+import registrationHeader from '../../../assets/registrationHeader.png';
 
 export const SignUp = ({ closeModal }) => {
   const [signupData, setSignupData] = useState({ name: '', email: '', password: '' });
