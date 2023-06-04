@@ -66,18 +66,6 @@ export const Registration = styled.div`
   transform: translateX(90%);
 `;
 
-/* ¿Alternativa?
-export const Registration = styled.div`
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  align-items: center;
-  justify-content: flex-end;
-  top: 35%;
-  padding: 10px;
-  transform: translateX(300%);
-`; */
-
 export const RegistrationLinks = styled(NavLink)`
   display: inline-block;
   color: grey;
