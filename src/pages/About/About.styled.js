@@ -62,12 +62,14 @@ export const AboutTextContainer = styled.div`
 `;
 
 export const StyledAboutBtn = styled.button`
-    width: 50%;
+    width: 40%;
+    margin-bottom: 15px;
     align-items: center;
     color: black;
     background-color: #fade4b;
     font-size: 1.2rem;
     border-radius: 0.5rem;
+    border: 1px solid white;
     padding: 0.7rem;
     cursor: pointer;
 
