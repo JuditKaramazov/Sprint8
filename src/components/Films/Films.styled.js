@@ -16,7 +16,7 @@ export const FilmsIntroduction = styled.h1`
 export const FilmContainer = styled.div`
     margin: 0 2rem 0 11rem;
     align-items: center;
-	gap: 2rem;
+    gap: 2rem;
     background-image: url(${starsBg});
     background-size: cover;
     -webkit-column-count: 3;
