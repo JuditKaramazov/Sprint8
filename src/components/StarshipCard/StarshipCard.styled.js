@@ -11,7 +11,7 @@ export const ShipsContainer = styled.div`
 	gap: 1.5rem;
     background-image: url(${starsBg});
     background-size: cover;
-    animation: smoothStart 2s ease-in;
+    animation: smoothStart 3s ease-in;
 
     .ship-name {
         letter-spacing: 0.2rem;
@@ -60,7 +60,7 @@ export const ShipsContainer = styled.div`
 export const ImageContainer = styled.div`
 	position: relative;
     box-shadow: 0px 3px 2px gold;
-    
+
     .starship-visual {
         max-height: 25rem;
 		width: 100%;
