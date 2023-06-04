@@ -6,7 +6,7 @@ import { FaFacebook,
     FaKickstarterK,
 } from 'react-icons/fa';
 
-const SiteFooter = () => (
+const Footer = () => (
     <FooterContainer >
         <p>More from Star Wars</p>
         <ul>
@@ -43,4 +43,4 @@ const SiteFooter = () => (
     </ FooterContainer>
 );
 
-export default SiteFooter;
+export default Footer;
