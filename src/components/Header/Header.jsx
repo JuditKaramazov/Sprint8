@@ -129,7 +129,11 @@ export default function Header() {
             >
               STARSHIPS
             </ HeaderLinks>
+            
           )}
+          <HeaderLinks to="/about" className="nav-link">
+            ABOUT
+          </HeaderLinks>
         </ LinksContainer>
         {showStarshipsAlert && !loggedInUser && (
           <div style={{ color: 'red', fontSize: '1.2rem'}}>
