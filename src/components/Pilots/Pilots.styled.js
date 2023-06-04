@@ -6,7 +6,6 @@ export const PilotsIntroduction = styled.h1`
     letter-spacing: 0.2rem;
     font-size: 2.5rem;
     font-weight: 600;
-    gap: 2rem;
     padding: 1rem;
     text-align: center;
     text-transform: uppercase;
@@ -14,33 +13,36 @@ export const PilotsIntroduction = styled.h1`
 `;
 
 export const PilotsContainer = styled.div`
-    margin: 0 6rem;
-	gap: 1.5rem;
+    margin: 0 4rem 0 8rem;
+    gap: 1.5rem;
     padding: 1rem;
     background-image: url(${starsBg});
     background-size: cover;
     -webkit-column-count: 4;
     -moz-column-count: 4;
     column-count: 4;
+    -webkit-column-gap: 1.5rem;
+    -moz-column-gap: 1.5rem;
+    column-gap: 1.5rem;
     animation: smoothStart 2s ease-in;
 
     .pilot-name {
-        letter-spacing: 0.2rem;
-        font-size: 1.6rem;
+        letter-spacing: 0.1rem;
+        font-size: 1.7rem;
         font-weight: 600;
         text-transform: uppercase;
         -webkit-text-stroke: 0.5px black;
     }
 
     .pilot-further-details {
-        width: 100%;
-        font-size: 1.25rem;
-        margin: 1 auto;
-        max-width: 1500px;
+      width: 100%;
+      font-size: 1.25rem;
+      margin: 1rem -2rem 4rem;
+      max-width: 1500px;
     }
 
     ul {
-        font-weight: 1rem;
+      font-weight: 1rem;
     }
 
     li {
@@ -69,7 +71,7 @@ export const PilotsContainer = styled.div`
 `;
 
 export const PilotImageContainer = styled.div`
-  display: column;
+  display: flex;
   
   .pilot-visual {
     max-height: 20rem;
@@ -79,11 +81,13 @@ export const PilotImageContainer = styled.div`
 `;
 
 export const NoImageContainer = styled.div`
-  height: 300px;
-  width: 20%;
+  width: 40%;
+  height: 315px;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: grey;
+  box-shadow: 0px 3px 2px gold;
   opacity: 0.6;
 
   p {

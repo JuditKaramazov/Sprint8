@@ -14,7 +14,7 @@ export const FilmsIntroduction = styled.h1`
 `;
 
 export const FilmContainer = styled.div`
-    margin: 0 6rem 5rem 10rem;
+    margin: 0 2rem 0 11rem;
     align-items: center;
 	gap: 2rem;
     background-image: url(${starsBg});
@@ -22,6 +22,9 @@ export const FilmContainer = styled.div`
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
+    -webkit-column-gap: 1.5rem;
+    -moz-column-gap: 1.5rem;
+    column-gap: 1.5rem;
     animation: smoothStart 2s ease-in;
 
     .film-title,
@@ -71,20 +74,22 @@ export const FilmContainer = styled.div`
 `;
 
 export const FilmImageContainer = styled.div`
-  display: column;
+  display: flex;
+  
   .film-visual {
     max-height: 20rem;
     box-shadow: 0px 3px 2px gold;
-    object-fit: fill;
 }
 `;
 
 export const NoImageContainer = styled.div`
   width: 40%;
   height: 315px;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: grey;
+  box-shadow: 0px 3px 2px gold;
   opacity: 0.6;
 
   p {
