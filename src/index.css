@@ -5,11 +5,6 @@
   src: url("./fonts/star.woff") format("woff");
 }
 
-@font-face {
-  font-family: "StarsJedi";
-  src: url("./fonts/starjedi.ttf") format(".ttf");
-}
-
 html {
   overflow-y: scroll;
   margin: 7.4rem 0 0;
