@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { HeaderContainer, StyledHeader, Logo, Registration, RegistrationLinks, StyledLink, HeaderLinks, LinksContainer } from './Header.styled';
+import { HeaderContainer, StyledHeader, Logo } from './Header.styled';
 import siteLogo from '../../assets/siteLogo.svg';
+import Navbar from '../Navbar/Navbar';
 import { Login } from '../../features/authentication/Login/Login';
 import { SignUp } from '../../features/authentication/SignUp/SignUp';
 
@@ -81,62 +82,17 @@ export default function Header() {
             <img className="header-logo" src={siteLogo} alt="Star Wars official logo" />
           </a>
         </ Logo>
-        <LinksContainer>
-          {!loggedInUser && (
-            <Registration>
-              <RegistrationLinks className="signup" onClick={openSignupModal}>
-                SIGN UP
-              </RegistrationLinks>
-              <div className="divider" style={{ color: 'grey', height: '1.2rem' }}> || </div>
-              <RegistrationLinks className="login" onClick={openLoginModal}>
-                LOG IN
-              </ RegistrationLinks>
-            </ Registration>
-          )}
-          {loginCompleted ? (
-            <Registration>
-              <StyledLink to="/starships/" className="user">
-                {loggedInUser.name}
-              </ StyledLink>
-              <div className="divider" style={{ color: 'grey', height: '1.2rem' }}> || </div>
-              <RegistrationLinks className="user" onClick={handleLogOut}>
-                SIGN OUT
-              </ RegistrationLinks>
-            </ Registration>
-          ) : (
-            <Registration>
-              <RegistrationLinks className="signup" onClick={openSignupModal}>
-                SIGN UP
-              </ RegistrationLinks>
-              <div className="divider" style={{ color: 'grey', height: '1.2rem' }}> || </div>
-              <RegistrationLinks className="login" onClick={openLoginModal}>
-                LOG IN
-              </ RegistrationLinks>
-            </ Registration>
-          )}
-          <HeaderLinks to="/" className="nav-link">
-            HOME
-          </ HeaderLinks>
-          {loggedInUser ? (
-            <HeaderLinks to="/starships/" className="nav-link">
-              STARSHIPS
-            </ HeaderLinks>
-          ) : (
-            <HeaderLinks
-              to="/starships/"
-              className="nav-link"
-              onClick={() => setShowStarshipsAlert(true)}
-            >
-              STARSHIPS
-            </ HeaderLinks>
-            
-          )}
-          <HeaderLinks to="/about" className="nav-link">
-            ABOUT
-          </HeaderLinks>
-        </ LinksContainer>
+        <Navbar
+          loggedInUser={loggedInUser}
+          loginCompleted={loginCompleted}
+          openLoginModal={openLoginModal}
+          openSignupModal={openSignupModal}
+          handleLogOut={handleLogOut}
+          navigateToStarships={navigateToStarships}
+          setShowStarshipsAlert={setShowStarshipsAlert}
+        />
         {showStarshipsAlert && !loggedInUser && (
-          <div style={{ color: 'red', fontSize: '1.2rem'}}>
+          <div style={{ color: 'red', fontSize: '1.2rem' }}>
             Only registered users can see this content.
           </div>
         )}
