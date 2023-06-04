@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import SiteHeader from './components/Header/Header';
-import SiteFooter from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import { StarshipList } from './pages/Main/Main';
 import { StarshipCard } from './components/StarshipCard/StarshipCard';
@@ -19,7 +19,7 @@ const App = () => {
   return (
     <Router>
       <>
-        <SiteHeader isLoggedIn={isLoggedIn} />
+        <Header isLoggedIn={isLoggedIn} />
         <Routes>
           <Route path="/" element={<Home />} />
           {isLoggedIn ? (
@@ -29,7 +29,7 @@ const App = () => {
           )}
           {isLoggedIn && <Route path="/starships/:id/" element={<StarshipCard />} />}
         </Routes>
-        <SiteFooter />
+        <Footer />
       </>
     </Router>
   );

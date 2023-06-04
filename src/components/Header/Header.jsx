@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { HeaderContainer, Header, Logo, Registration, RegistrationLinks, StyledLink, HeaderLinks, LinksContainer } from './Header.styled';
+import { HeaderContainer, StyledHeader, Logo, Registration, RegistrationLinks, StyledLink, HeaderLinks, LinksContainer } from './Header.styled';
 import siteLogo from '../../assets/siteLogo.svg';
 import { Login } from '../Login/Login';
 import { SignUp } from '../SignUp/SignUp';
 
-export default function SiteHeader() {
+export default function Header() {
   const [openedLogin, setOpenedLogin] = useState(false);
   const [openedSignup, setOpenedSignup] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -75,7 +75,7 @@ export default function SiteHeader() {
 
   return (
     <HeaderContainer>
-      <Header>
+      <StyledHeader>
         <Logo>
           <a href="/">
             <img className="header-logo" src={siteLogo} alt="Star Wars official logo" />
@@ -136,7 +136,7 @@ export default function SiteHeader() {
             Only registered users can see this content.
           </div>
         )}
-      </ Header>
+      </ StyledHeader>
       {openedLogin && <Login closeModal={closeLoginModal} handleLogIn={handleLogIn} />}
       {openedSignup && <SignUp closeModal={closeSignupModal} handleLogIn={handleLogIn} />}
     </ HeaderContainer>

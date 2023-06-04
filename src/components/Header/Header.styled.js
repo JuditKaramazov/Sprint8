@@ -26,7 +26,7 @@ export const HeaderContainer = styled.div`
   }
 `;
 
-export const Header = styled.header`
+export const StyledHeader = styled.header`
   display: flex;
   flex-direction: column;
   height: 140px; 
