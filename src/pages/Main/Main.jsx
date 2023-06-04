@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faJedi } from '@fortawesome/free-solid-svg-icons';
 import { StarshipData } from '../../components/StarshipData/StarshipData';
 
-export const StarshipList = () => {
+export const Main = () => {
   const element = <FontAwesomeIcon icon={faJedi} />;
   const [page, setPage] = useState(1);
   const [viewMore, setViewMore] = useState(true);

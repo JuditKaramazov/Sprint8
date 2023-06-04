@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
-import { StarshipList } from './pages/Main/Main';
+import { Main } from './pages/Main/Main';
 import { StarshipCard } from './components/StarshipCard/StarshipCard';
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           {isLoggedIn ? (
-            <Route path="/starships/*" element={<StarshipList />} />
+            <Route path="/starships/*" element={<Main />} />
           ) : (
             <Route path="/starships/*" element={<Navigate to="/" />} />
           )}
