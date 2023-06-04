@@ -15,7 +15,7 @@ function About() {
       <BackgroundContainer>
         <AboutWrapper>
           <div className="about-title">
-            <span style={{ display: 'block', color: 'black', fontSize: '6rem', textAlign: 'center', WebkitTextStrokeWidth: '1px', WebkitTextStrokeColor: 'gold' }}>
+            <span style={{ display: 'block', color: 'black', fontSize: '5.5rem', textAlign: 'center', WebkitTextStrokeWidth: '1px', WebkitTextStrokeColor: 'gold' }}>
               ABOUT THE SITE
             </span>
           </div>

@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import starsBg from '../../assets/starsBg.png';
 
 export const BackgroundContainer = styled.div`
-background-image: url(${starsBg});
+  background-image: url(${starsBg});
 `;
 
 export const AboutWrapper = styled.div`
-  height: 80vh;
+  height: 70vh;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -21,6 +21,7 @@ export const AboutWrapper = styled.div`
   border-radius: 2rem;
   box-shadow: 10px 10px 23px -5px rgba(231,166,26,1);
   padding: 2px;
+  animation: smoothStart 2s ease-in;
 
   .about-img {
     display: flex;
@@ -29,21 +30,31 @@ export const AboutWrapper = styled.div`
   
   .about-img img {
     max-width: 80%;
-    height: 125px;
+    height: 110px;
   }
 
+  @keyframes smoothStart {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
   }
 `;
 
 export const AboutTextContainer = styled.div`
-  margin: 3rem auto;
+  margin: 1rem auto;
   align-items: center;
   justify-content: center;
   color: white;
   background-color: #26262650;
   border: 0.5px solid gold;
   border-radius: 2rem;
-  padding: 2rem;
+  padding: 1.2rem;
 
   p {
     font-family: "Stars", sans-serif;
@@ -59,6 +70,7 @@ export const AboutTextContainer = styled.div`
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: gold;
   }
+}
 `;
 
 export const StyledAboutBtn = styled.button`
