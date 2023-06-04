@@ -68,6 +68,26 @@ export const PilotsContainer = styled.div`
       opacity: 1;
     }
 }
+
+@media (max-width: 1200px) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2rem;
+}
+
+@media (max-width: 600px) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2rem;
+}
 `;
 
 export const PilotImageContainer = styled.div`
@@ -81,9 +101,8 @@ export const PilotImageContainer = styled.div`
 `;
 
 export const NoImageContainer = styled.div`
-  width: 40%;
-  height: 315px;
-  display: flex;
+  height: 300px;
+  width: 20%;
   align-items: center;
   justify-content: center;
   background-color: grey;

@@ -71,6 +71,27 @@ export const FilmContainer = styled.div`
             opacity: 1;
         }
     }
+
+    @media (max-width: 1200px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+    @media (max-width: 900px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 2rem;
+      }
+      
+      @media (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 2rem;
+      }
+    }
 `;
 
 export const FilmImageContainer = styled.div`
@@ -79,7 +100,7 @@ export const FilmImageContainer = styled.div`
   .film-visual {
     max-height: 20rem;
     box-shadow: 0px 3px 2px gold;
-}
+  }
 `;
 
 export const NoImageContainer = styled.div`
