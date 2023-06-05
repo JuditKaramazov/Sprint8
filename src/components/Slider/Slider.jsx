@@ -51,7 +51,7 @@ const Slider = ({ slideImages }) => {
             </div>
           </div>
         ))}
-      </Slide>
+      </ Slide>
     </div>
   );
 };
