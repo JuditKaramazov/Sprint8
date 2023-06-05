@@ -8,7 +8,6 @@ export const StarshipData = (props) => {
     const newIdentifier = parseInt(alternative);
 
     return (
-        <>
         <div className='data-wrapper'>
             <StyledLink to={"/starships/" + newIdentifier}>
                 <ShipsBox>
@@ -19,6 +18,5 @@ export const StarshipData = (props) => {
                 </ ShipsBox>
             </ StyledLink>
         </div>
-        </>
     );
 };
