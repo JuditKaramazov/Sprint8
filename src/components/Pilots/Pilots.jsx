@@ -39,7 +39,7 @@ export const Pilots = (props) => {
   };
 
   return (
-    <div className="pilots-container">
+    <div className="pilots-container" style={{ display: 'flex', flexDirection: 'column'}}>
       <p className="pilot-name">{pilotDetails.name}</p>
       <PilotImageContainer>
         {!imageError ? (
