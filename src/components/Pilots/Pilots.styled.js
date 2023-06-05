@@ -13,7 +13,7 @@ export const PilotsIntroduction = styled.h1`
 `;
 
 export const PilotsContainer = styled.div`
-    margin: 0 4rem 0 8rem;
+    margin: 0 4rem 0 13rem;
     gap: 1.5rem;
     padding: 1rem;
     background-image: url(${starsBg});
@@ -27,11 +27,11 @@ export const PilotsContainer = styled.div`
     animation: smoothStart 2s ease-in;
 
     .pilot-name {
-        letter-spacing: 0.1rem;
-        font-size: 1.7rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        -webkit-text-stroke: 0.5px black;
+      letter-spacing: 0.1rem;
+      font-size: 1.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      -webkit-text-stroke: 0.5px black;
     }
 
     .pilot-further-details {
@@ -46,14 +46,14 @@ export const PilotsContainer = styled.div`
     }
 
     li {
-        justify-content: space-between;
-        list-style: none;
-        text-transform: uppercase;
+      justify-content: space-between;
+      list-style: none;
+      text-transform: uppercase;
 
-        span {
-            color: #DEDEDE;
-            margin-left: 0.7rem;
-            text-transform: capitalize;
+      span {
+        margin-left: 0.7rem;
+        color: #DEDEDE;
+        text-transform: capitalize;
         }
     }
     
@@ -72,21 +72,22 @@ export const PilotsContainer = styled.div`
 @media (max-width: 1200px) {
   display: flex;
   flex-direction: column;
+  margin: 0 4rem 0 12rem;
   align-items: center;
 }
 
 @media (max-width: 900px) {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 0 2rem;
+  align-items: center;
 }
 
 @media (max-width: 600px) {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 0 2rem;
+  align-items: center;
 }
 `;
 

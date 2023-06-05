@@ -32,7 +32,7 @@ export const FormBody = styled.form`
   opacity: 0.9;
 
   .close-form {
-    height: 50px;
+    height: 60px;
     width: 50px;
     margin-top: 1%;
     margin-left: 90%;
@@ -54,6 +54,18 @@ export const FormBody = styled.form`
     font-weight: 400;
     text-align: center;
     text-transform: uppercase;
+  }
+
+  @media (max-width: 1200px) {
+    width: 60%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 80%;
+  }
+
+  @media (max-width: 700px) {
+    width: 100%;
   }
 
   input {

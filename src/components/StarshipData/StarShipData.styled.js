@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const ShipsBox = styled.div`
-  background-color: #151515;
   height: 100px;
   width: 50%;
   display: flex;
@@ -13,6 +12,7 @@ export const ShipsBox = styled.div`
   font-family: "Stars", sans-serif;
   justify-content: center;
   cursor: pointer;
+  background-color: #151515;
   border-radius: 0.2rem;
   padding: 5px;
   

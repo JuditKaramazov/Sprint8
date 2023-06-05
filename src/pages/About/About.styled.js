@@ -33,6 +33,23 @@ export const AboutWrapper = styled.div`
     height: 110px;
   }
 
+  @media (max-width: 1200px) {
+    margin-top: 270px;
+    width: 70%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 90%;
+    margin-top: 300px;
+  }
+
+  @media (max-width: 700px) {
+    width: 100%;
+    margin-top: 250px;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
   @keyframes smoothStart {
     0% {
         opacity: 0;

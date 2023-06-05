@@ -14,7 +14,7 @@ export const FilmsIntroduction = styled.h1`
 `;
 
 export const FilmContainer = styled.div`
-    margin: 0 2rem 0 11rem;
+    margin: 0 2rem 0 14rem;
     align-items: center;
     gap: 2rem;
     background-image: url(${starsBg});
@@ -75,21 +75,22 @@ export const FilmContainer = styled.div`
     @media (max-width: 1200px) {
         display: flex;
         flex-direction: column;
+        margin: 0 4rem 0 26rem;
         align-items: center;
       }
 
     @media (max-width: 900px) {
         display: flex;
         flex-direction: column;
+        margin: 0 4rem 0 14rem;
         align-items: center;
-        margin: 0 2rem;
       }
       
       @media (max-width: 600px) {
         display: flex;
         flex-direction: column;
+        margin: 0 4rem 0 8rem;
         align-items: center;
-        margin: 0 2rem;
       }
     }
 `;

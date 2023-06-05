@@ -23,8 +23,10 @@ export const HeaderContainer = styled.div`
     100% {
       opacity: 1;
     }
-  }
+  } 
 `;
+
+
 
 export const StyledHeader = styled.header`
   display: flex;
@@ -36,6 +38,14 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: center;
   padding: 20px 10px;
+
+  @media (max-width: 1200px) {
+    height: 300px;
+  }
+
+  @media (max-width: 700px) {
+    height: 290px;
+  }
 `;
 
 export const Logo = styled.div`
@@ -64,6 +74,17 @@ export const Registration = styled.div`
   right: 0%;
   padding: 10px;
   transform: translateX(90%);
+
+  @media (max-width: 1200px) {
+    top: 87%;
+    left: 220px;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: 700px) {
+    top: 90%;
+    left: 350;
+  }
 `;
 
 export const RegistrationLinks = styled(NavLink)`
@@ -94,7 +115,7 @@ export const StyledLink = styled(Link)`
     color: white;
   }
 }
-`
+`;
 
 export const HeaderLinks = styled(NavLink)`
   display: inline-block;

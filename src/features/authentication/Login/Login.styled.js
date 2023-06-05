@@ -56,6 +56,18 @@ export const FormBody = styled.form`
     text-transform: uppercase;
   }
 
+  @media (max-width: 1200px) {
+    width: 60%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 80%;
+  }
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+
   input {
     display: flex;
     height: 50px;
@@ -70,9 +82,9 @@ export const FormBody = styled.form`
     text-align: left;
 
     &:focus {
-        color: #edd700;
-        background-color: #484848;
-        border-color: #edd700;
+      color: #edd700;
+      background-color: #484848;
+      border-color: #edd700;
     };
   }
   
@@ -90,7 +102,7 @@ export const FormBody = styled.form`
     &:hover {
         background-color: #3f6ca9;
     }
-}
+  }
 `;
 
 export const Alert = styled.span`
