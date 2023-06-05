@@ -5,8 +5,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faJedi } from '@fortawesome/free-solid-svg-icons';
 import { StarshipData } from '../../components/StarshipData/StarshipData';
 
+const Loader = () => (<h1 style={{ position: 'relative', marginTop: '10rem', color: 'gold', fontSize: '2rem', fontWeight: '100', textAlign: 'center' }}>Loading...</h1>);
+
+const element = <FontAwesomeIcon icon={faJedi} />;
+
+const EndMessage = () => (
+  <p style={{ display: 'flex', color: 'gold', flexDirection: 'column', fontSize: '1.3rem', gap: '8px', textAlign: 'center' }}>
+    All starships successfully loaded!
+    <span>{element}</span>
+  </p>
+);
+
 export const Main = () => {
-  const element = <FontAwesomeIcon icon={faJedi} />;
   const [page, setPage] = useState(1);
   const [viewMore, setViewMore] = useState(true);
   const [starship, setStarship] = useState([]);
@@ -32,29 +42,24 @@ export const Main = () => {
     fetchSpaceships();
     scrollLoading();
   }, [page]);
-
+  
+  const handleNext = () => setPage((prevPage) => prevPage < 4 ? prevPage + 1 : prevPage);
+  
   return (
     <div>
       <InfiniteScroll
         dataLength={starship.length}
-        next={() => setPage((prevPage) => prevPage < 4 ? prevPage + 1 : prevPage)}
+        next={handleNext}
         hasMore={viewMore}
-        loader={<h1 style={{ position: 'relative', marginTop: '10rem', color: 'gold', fontSize: '2rem', fontWeight: '100', textAlign: 'center' }}>Loading...</h1>}
-        endMessage={
-          <p style={{ color: 'gold', fontSize: '1.3rem', textAlign: 'center' }}>
-            All starships successfully loaded!
-            <br />
-            <br />
-            {element}
-          </p>
-        }
+        loader={<Loader />}
+        endMessage={<EndMessage />}
       >
         <div className='starshipCard'>
-          {starship.map((ship, index) => (
-            <StarshipData key={`${ship.url}-${index}`} name={ship.name} model={ship.model} url={ship.url} />
+          {starship.map(({ model, name, url }, index) => (
+            <StarshipData key={`${url}-${index}`} name={name} model={model} url={url} />
           ))}
         </div>
-      </InfiniteScroll>
+      </ InfiniteScroll>
     </div>
   );
 };
