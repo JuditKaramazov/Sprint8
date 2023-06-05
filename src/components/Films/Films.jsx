@@ -31,7 +31,7 @@ export const Films = (props) => {
   }, [props.url]);
 
   return (
-    <div className="films-container">
+    <div className="films-container" style={{ display: 'flex', flexDirection: 'column'}}>
       {filmDetails.map((film, index) => (
         <div className="film-details" key={index}>
           <p className="film-title">{film.title}</p>
