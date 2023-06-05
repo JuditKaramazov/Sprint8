@@ -63,7 +63,6 @@ export const StarshipCard = () => {
             </ul>
         </div>
         </ ShipsContainer>
-        <div>
         <PilotsIntroduction>Related Pilots</ PilotsIntroduction>
         {starshipDetails.pilots && <PilotsContainer>
           <div>
@@ -77,7 +76,6 @@ export const StarshipCard = () => {
           {starshipDetails.films && <FilmContainer>
             <Films url={starshipDetails.films} />
           </ FilmContainer>}
-      </div>
       </>
   );
 };
