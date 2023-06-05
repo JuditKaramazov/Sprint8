@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Overlay, FormBody, Alert } from './Login.styled';
 import registrationHeader from '../../../assets/registrationHeader.png';
+import { RegistrationLinks } from '../../../components/Header/Header.styled';
 
-export const Login = ({ closeModal, handleLogIn }) => {
+export const Login = ({ closeModal, handleLogIn, openRegistrationModal }) => {
   const [loginData, setLoginData] = useState({ email: '', password: '' });
   const [users, setUsers] = useState([]);
   const [showAlert, setShowAlert] = useState(false);
@@ -43,6 +44,11 @@ export const Login = ({ closeModal, handleLogIn }) => {
     }
   }, []);
 
+  const handleRegistrationSwitch = () => {
+    closeModal();
+    openRegistrationModal();
+  };
+
   return (
     <Overlay>
       <FormBody onSubmit={handleLoginSubmit}>
@@ -67,9 +73,15 @@ export const Login = ({ closeModal, handleLogIn }) => {
           className="form-control"
           required
         />
+        <div>
+          <span style={{ color: 'gold', fontSize: '1.3rem' }}>Not a member?</span>
+          <RegistrationLinks className="login" onClick={handleRegistrationSwitch}>
+            Create a new account
+          </ RegistrationLinks>
+        </div>
         <button type="submit" className="submit-button">Sign In</button>
         {showAlert && <Alert>Incorrect credentials. Please, try again.</Alert>}
-      </FormBody>
-    </Overlay>
+      </ FormBody>
+    </ Overlay>
   );
 };

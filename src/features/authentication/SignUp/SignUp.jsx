@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Overlay, FormBody } from './SignUp.styled';
 import registrationHeader from '../../../assets/registrationHeader.png';
+import { RegistrationLinks } from '../../../components/Header/Header.styled';
 
-export const SignUp = ({ closeModal }) => {
+export const SignUp = ({ closeModal, openLoginModal }) => {
   const [signupData, setSignupData] = useState({ name: '', email: '', password: '' });
   const [loggedInUser, setLoggedInUser] = useState(null);
 
@@ -48,6 +49,11 @@ export const SignUp = ({ closeModal }) => {
     alert(`Successfully registered, ${newUser.name}!`);
   };
 
+  const handleLoginSwitch = () => {
+    openLoginModal();
+    closeModal();
+  };
+
   return (
     <Overlay>
       <FormBody onSubmit={handleSignupSubmit}>
@@ -80,8 +86,16 @@ export const SignUp = ({ closeModal }) => {
           className="form-control"
           required
         />
-        <button type="submit" className="submit-button">Sign Up</button>
-      </FormBody>
-    </Overlay>
+        <div>
+          <span style={{ color: 'gold', fontSize: '1.3rem' }}>Already a member?</span>
+          <RegistrationLinks className="login" onClick={handleLoginSwitch}>
+            Log in now
+          </ RegistrationLinks>
+        </div>
+        <button type="submit" className="submit-button">
+          Sign Up
+        </button>
+      </ FormBody>
+    </ Overlay>
   );
 };

@@ -9,6 +9,7 @@ import { SignUp } from '../../features/authentication/SignUp/SignUp';
 export default function Header() {
   const [openedLogin, setOpenedLogin] = useState(false);
   const [openedSignup, setOpenedSignup] = useState(false);
+  const [openedRegistration, setOpenedRegistration] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [loginCompleted, setLoginCompleted] = useState(false);
   const [showStarshipsAlert, setShowStarshipsAlert] = useState(false);
@@ -39,6 +40,7 @@ export default function Header() {
   const openLoginModal = () => {
     setOpenedLogin(true);
     setOpenedSignup(false);
+    setOpenedRegistration(false);
   };
 
   const closeLoginModal = () => {
@@ -48,11 +50,22 @@ export default function Header() {
   const openSignupModal = () => {
     setOpenedSignup(true);
     setOpenedLogin(false);
+    setOpenedRegistration(false);
   };
 
   const closeSignupModal = () => {
     setOpenedSignup(false);
   };
+
+  const openRegistrationModal = () => {
+    setOpenedRegistration(true);
+    setOpenedLogin(false);
+    setOpenedSignup(false);
+  };
+  
+  const closeRegistrationModal = () => {
+    setOpenedRegistration(false);
+  };  
 
   const handleLogIn = (user) => {
     setLoggedInUser(user);
@@ -87,6 +100,7 @@ export default function Header() {
           loginCompleted={loginCompleted}
           openLoginModal={openLoginModal}
           openSignupModal={openSignupModal}
+          openRegistrationModal={openRegistrationModal}
           handleLogOut={handleLogOut}
           navigateToStarships={navigateToStarships}
           setShowStarshipsAlert={setShowStarshipsAlert}
@@ -97,8 +111,27 @@ export default function Header() {
           </div>
         )}
       </ StyledHeader>
-      {openedLogin && <Login closeModal={closeLoginModal} handleLogIn={handleLogIn} />}
-      {openedSignup && <SignUp closeModal={closeSignupModal} handleLogIn={handleLogIn} />}
+      {openedLogin && (
+        <Login
+          closeModal={closeLoginModal}
+          handleLogIn={handleLogIn}
+          openRegistrationModal={openRegistrationModal}
+        />
+      )}
+      {openedSignup && (
+        <SignUp
+          closeModal={closeSignupModal}
+          handleLogIn={handleLogIn}
+          openLoginModal={openLoginModal}
+        />
+      )}
+      {openedRegistration && (
+        <SignUp
+          closeModal={closeRegistrationModal}
+          handleLogIn={handleLogIn}
+          openLoginModal={openLoginModal}
+        />
+      )}
     </ HeaderContainer>
   );
 }
