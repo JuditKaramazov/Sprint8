@@ -1,5 +1,11 @@
 import React from 'react';
-import { Registration, RegistrationLinks, StyledLink, HeaderLinks, LinksContainer } from './../Header/Header.styled';
+import { 
+  Registration,
+  RegistrationLinks, 
+  StyledLink, 
+  HeaderLinks, 
+  LinksContainer,
+} from './../Header/Header.styled';
 
 const Navbar = ({
   loggedInUser,
