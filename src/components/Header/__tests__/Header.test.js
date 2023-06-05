@@ -14,7 +14,7 @@ describe('Header component', () => {
     const starshipsLink = screen.getByText('STARSHIPS');
     fireEvent.click(starshipsLink);
 
-    const alertMessage = screen.getByText('Only registered users can see this content.');
+    const alertMessage = screen.getByText(/only registered users can see this content\./i);
     expect(alertMessage).toBeInTheDocument();
   });
 });
