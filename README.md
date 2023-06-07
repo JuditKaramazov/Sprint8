@@ -40,6 +40,9 @@ The influence of the official Star Wars website (`https://www.starwars.com/`) wh
 Most of the IT Academy students share similar profiles and backgrounds: a previous formation, the urge to change our lives, and the decision to build them from scratch. During this process of self-discovery, deconstruction and transformation, my best friend, `Kernelkun`, has always been there. Maybe because of that, or simply because he's a huge `Star Wars` nerd, I couldn't deny myself the pleasure of `thanking him` (as well as everyone visiting this little space, too) again.
 
 As for the ones getting started with React just like I am, I know, guys: the learning process is indeed a bumpy ride with many obstacles to overcome, but remember our motto: `Don't give up, skeleton!`
+
+If I could do it (and believe me when I say that I'm `terrible` at this), you can do it, too! [https://juditisnojedi.vercel.app/](https://juditisnojedi.vercel.app/)
+
 Oh, wait, wait... are you telling me you're crazy enough to give React a try? If that's the case, you little Padawan...
 
 <br>
